@@ -12,6 +12,9 @@ documentation, grouped arguments helpers and a rich
 :abbr:`API (Application Programming Interface)` to build rock solid
 :abbr:`CLI (Command line interface)` tools and utilities.
 
+Table of contents
+^^^^^^^^^^^^^^^^^
+
 .. toctree::
    :maxdepth: 2
 

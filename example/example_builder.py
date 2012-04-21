@@ -33,7 +33,13 @@ import context
 
 from subcmd.app import App
 
+def do_action(self, options):
+	"""Action subcommand"""
+	print "execute action!"
+
 if __name__ == "__main__":
     app = App(name="myapp", description="My cli application", version="0.2",
               epilog="CLI rocks!")
+
+    app.add_command("action", do_action)
     app.cmdline()

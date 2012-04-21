@@ -1,3 +1,5 @@
+.. _manual_basic:
+
 ===========
 Basic Usage
 ===========
@@ -7,6 +9,14 @@ its methods as a builder.
 
 Inherited Class
 ===============
+
+In inherited class mode just create a class that inherits from :class:`subcmd.app.App`. To 
+customize this class just override its constructor and set the proprerties as you like.
+
+We will see how to customize this inherited class on next chapter. 
+
+Here is the simples example tool that you can build using inherited class.
+
 ::
 
     from subcmd.app import App
@@ -20,6 +30,14 @@ Inherited Class
 
 Builder API
 ===========
+
+In builer mode instanciate main :class:`subcmd.app.App` class. This object provides an full API
+to build appending commands to it, customizing them settings properties as you build your tool.
+
+We will see how to build an complete tool using :class:`subcmd.app.App` API on next chapter.
+
+Here is the simplest example tool that you can build using builder API.
+
 ::
 
 	from subcmd.app import App
@@ -110,3 +128,11 @@ Executing both scripts will show the same output, a default usage help message l
       {}             additional help
 
     CLI rocks!
+
+Next we are going to see how to work with arguments, specifically the default arguments that 
+every tool will have.
+
+This arguments are setted up automatically by :class:`subcmd.app.App` class and you don't 
+need to do anything to use them.
+
+:ref:`Next: Default optional arguments <manual_defaults>`

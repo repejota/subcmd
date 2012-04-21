@@ -1,3 +1,5 @@
+.. _tutorial:
+
 ========
 Tutorial
 ========
@@ -74,3 +76,5 @@ arguments are specified ).
 
 **subcmd** provides a lot of more features and customization options, refer to
 the detailed :ref:`manual <manual>` for more information.
+
+:ref:`Next: Complete Manual <manual>`

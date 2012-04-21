@@ -1,3 +1,5 @@
+.. _manual_defaults:
+
 ==========================
 Default optional arguments
 ==========================

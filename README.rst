@@ -6,4 +6,4 @@ build tools that follows this CLI interface:
 
 <clitool> [global options] <command> [arguments]
 
-`Learn more <http://github.com/repejota/subcmd>`_.
+`Learn more <http://repejota.github.com/subcmd/>`_.

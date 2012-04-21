@@ -10,7 +10,7 @@ documentation, grouped arguments helpers and a rich
 It is licensed with the `BSD three-clause <http://en.wikipedia.org/wiki/BSD_licenses#3-clause_license_.28.22New_BSD_License.22_or_.22Modified_BSD_License.22.29>`_
 license.
 
-A common cli tool built with **subcmd** follows a pattern like:
+A common :abbr:`CLI (Command line interface)` tool built with **subcmd** follows a pattern like:
 
 ::
 
@@ -35,3 +35,11 @@ More information
 this project please go to its
 `Github repository site <http://github.com/repejota/subcmd>`_ and file a bug
 or write him a message.
+
+.. raw:: html
+
+	<div style="margin-top: 2.5em">
+	<iframe height="20px" frameborder="0" width="85px" scrolling="0" allowtransparency="true" src="http://markdotto.github.com/github-buttons/github-btn.html?user=repejota&amp;repo=subcmd&amp;type=watch&amp;count=true" class="github-btn"></iframe>
+
+  <iframe height="20px" frameborder="0" width="85px" scrolling="0" allowtransparency="true" src="http://markdotto.github.com/github-buttons/github-btn.html?user=repejota&amp;repo=subcmd&amp;type=fork&amp;count=true" class="github-btn"></iframe>
+  </p>

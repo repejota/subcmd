@@ -30,20 +30,42 @@
 #
 
 import context
+import unittest
 
 from subcmd.app import App
 
 
-class Application(App):
-    name = "myapp"
-    description = "My cli application"
-    version = "0.2"
-    epilog = "CLI rocks!"
+class InheritedTestSuite(unittest.TestCase):
+	"""Inherited test cases."""
 
-    def do_action(self, options):
-        """Action subcommand"""
-        print "execute action!"
+	def test_absolute_truth_and_meaning(self):
+		assert True
 
-if __name__ == "__main__":
-    app = Application()
-    app.cmdline()
+	def test_create_class(self):
+		class Application(App):
+			name = "myapp"
+			description = "My cli application"
+			version = 0.2
+			epilog = "CLI rocks!"
+
+		app = Application()
+		# We got a default name
+		self.assertIsNotNone(app.name)
+		# Default name is initialized
+		self.assertEquals("myapp", app.name)
+		# We got a default description
+		self.assertIsNotNone(app.description)
+		# Default description is initialized
+		self.assertEquals("My cli application", app.description)
+		# We got a default epilog
+		self.assertIsNotNone(app.epilog)
+		# Default epilog is initialized
+		self.assertEquals("CLI rocks!", app.epilog)
+		# We got a default version
+		self.assertIsNotNone(app.version)
+		# Default version is 0.2
+		self.assertEquals(0.2, app.version)
+
+
+if __name__ == '__main__':
+    unittest.main()

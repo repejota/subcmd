@@ -36,8 +36,7 @@ from subcmd import base
 
 
 class App(object):
-    """
-    Commander object.
+    """CLI object entry point.
 
     Implements a Hippocampus entry point command that accepts options and
     arguments.
@@ -70,24 +69,67 @@ class App(object):
     def __init__(self, name=None, description=None, version=None, epilog=None,
                  *args, **kwargs):
         """Application constructor"""
+        # Available commands
+        self.__commands = {}
+
         # The program name
-        self.name = name
+        self.__name = name
 
         # The program description
-        self.description = description
+        self.__description = description
 
         # The program version
-        self.version = version
+        self.__version = version
 
         # The program epilog
-        self.epilog = epilog
+        self.__epilog = epilog
 
         # Default arguments
-        self.default_args = ['--help']
+        self.__default_args = ['--help']
+
+    @property
+    def name(self):
+        """Get Application's name"""
+        if not self.__name:
+            return self.__class__.__name__
+        return self.__name
+
+    @property
+    def description(self):
+        """Get Application's description"""
+        if not self.__description:
+            return u"%s's description" % self.name
+        return self.__description
+
+    @property
+    def epilog(self):
+        """Get Application's epilog"""
+        if not self.__epilog:
+            return u"%s's epilog" % self.name
+        return self.__epilog
+
+    @property
+    def version(self):
+        """Get current application version"""
+        if not self.__version:
+            return 0
+        return self.__version
+
+    def add_command(self, name, command_func):
+        """Adds a new command"""
+        self._argparse_subcmds[name]={'name': name, 'func': command_func, 'options': []}
+
+    def remove_command(self, name):
+        """Removes an existing command"""
+        if name in self._argparse_subcmds:
+            del self._argparse_subcmds[name]
+
+    def list_commands(self):
+        """Adds a new command"""
+        return self._argparse_subcmds.keys()
 
     def cmdline(self):
-        """
-        Parsing cmdline and execution method.
+        """Parsing cmdline and execution method.
 
         This class parses input from command line interface to extract the
         command, subcommands and arguments.
@@ -131,7 +173,7 @@ class App(object):
 
         # If we have no no arguments parse default.
         if len(sys.argv) <= 1:
-            options = parser.parse_args(self.default_args)
+            options = parser.parse_args(self.__default_args)
         else:
             options = parser.parse_args()
 

@@ -28,7 +28,12 @@ Current stable version is |version|
 
 .. raw:: html
 
-   <p><a href="" class="btn">Download stable version</a></p>
+   <p style="margin-bottom: 20px">
+   <a href="" class="btn">
+   <i class="icon-download"></i>
+   Download stable version
+   </a>
+   </p>
 
 Development version
 ^^^^^^^^^^^^^^^^^^^
@@ -38,7 +43,12 @@ for help and troubleshooting.
 
 .. raw:: html
 
-   <p><a href="" class="btn">Download trunk version</a></p>
+   <p style="margin-bottom: 20px">
+   <a href="" class="btn">
+   <i class="icon-download"></i>
+   Download trunk version
+   </a>
+   </p>
 
 
 Installing from sources involves the following steps:
@@ -54,3 +64,8 @@ installation.
 
 For old versions and active development branches please, refer to the
 project Github `pages <http://github.com/repejota/subcmd>`_.
+
+Once you have installed proceed to read the quick :ref:`tutorial <tutorial>` or 
+the in depth :ref:`manual <manual>` and start to work with **subcmd**.
+
+:ref:`Next: Quick Tutorial <tutorial>`
