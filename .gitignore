@@ -1,0 +1,7 @@
+.coverage
+
+subcmd/*.*/*.pyc
+
+docs/_build
+
+.hg
