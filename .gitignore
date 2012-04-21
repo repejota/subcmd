@@ -5,3 +5,4 @@ subcmd/*.*/*.pyc
 docs/_build
 
 .hg
+.hgignore
