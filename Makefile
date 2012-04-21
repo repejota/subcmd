@@ -55,8 +55,6 @@ build:
 doc:
 	  @echo $(GREEN)"Building $(PROJECT_NAME) documentation..."$(NOTHING)
 	  @$(MAKE) -C docs html SPHINXOPTS=-Aonline=1
-	  @$(MKDIR) -p $(TOP)/docs/components/$(PROJECT_NAME)
-	  @$(CP) -r docs/build/html/* $(TOP)/docs/components/$(PROJECT_NAME)
 
 test:
 	  @echo $(GREEN)"Running $(PROJECT_NAME) tests..."$(NOTHING)
@@ -72,8 +70,6 @@ install: build
 
 uninstall:
 	  @echo $(GREEN)"Uninstalling $(PROJECT_NAME) packages..."$(NOTHING)
-	  @$(RM) -rf $(SITE_PACKAGES)/kake*
-	  @$(RM) /usr/local/bin/kake
 
 clean:
 	  @echo $(GREEN)"Cleaning $(PROJECT_NAME) ..."$(NOTHING)
@@ -82,12 +78,11 @@ clean:
 	  @$(FIND) . -name '*~' -delete
 	  @$(RM) -f MANIFEST
 	  @$(RM) -rf build
-	  @$(RM) -rf docs/build
+	  @$(RM) -rf docs/_build
 	  @$(RM) -rf $(PROJECT_NAME).egg-info
 
 distclean: clean
 	  @echo $(GREEN)"Cleaning $(PROJECT_NAME) packages..."$(NOTHING)
 	  @$(RM) -rf dist
-	  @$(RM) -rf $(TOP)/docs/components/$(PROJECT_NAME)
 
 .PHONY: clean distclean build doc test dist install
