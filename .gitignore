@@ -1,4 +1,7 @@
 .coverage
+build
+dist
+*egg*
 
 subcmd/*.*/*.pyc
 
