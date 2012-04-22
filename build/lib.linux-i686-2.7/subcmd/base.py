@@ -29,24 +29,51 @@
 ## END LICENSE BLOCK
 #
 
-import context
 
-from subcmd.app import App
-from subcmd.decorators import option
+class SubCommand(type):
+    """
+    This metaclass implements an entry point based on a standard
+    command-subcommand in which any method belonging to a particular
+    superclass that implements it and it starts with "do".
 
+    The class methods that start with "do" will serve as command and by
+    decorators and arg option subcommands can be implemented and pass data to
+    these subcommands to be processed.
 
-class Application(App):
-    name = "myapp"
-    description = "My cli application"
-    version = "0.2"
-    epilog = "CLI rocks!"
+    Example:::
 
-    @option('-q', '--quiet', action='store_true', help='Quiet mode, no print to stdout')
-    def do_action(self, options):
-        """Action subcommand"""
-        if not options.quiet:
-            print "execute action!"
+        class CommandTool(object):
+            __metaclass__ = Subcommand
+            name = "CommandTool"
+            description = "A desc for CommandTool"
+            epilog = "An epilog for CommandTool"
 
-if __name__ == "__main__":
-    app = Application()
-    app.cmdline()
+    :returns: object - A class implementing subcommands pattern.
+    """
+
+    def __new__(cls, classname, bases, classdict):
+        """
+        Class creation.
+
+        Get all methods starting with "do" and put them available as commands.
+        """
+
+        # Default subcommands
+        subcmds = {}
+
+        for name, func in classdict.items():
+            # If method starts with 'do_' is a command.
+            if name.startswith('do_'):
+                name = name[3:]
+                subcmd = {
+                    'name': name,
+                    'func': func,
+                    'options': []
+                }
+                # Get subcommand custom arguments
+                if hasattr(func, 'options'):
+                    subcmd['options'] = func.options
+                subcmds[name] = subcmd
+
+        classdict['_argparse_subcmds'] = subcmds
+        return type.__new__(cls, classname, bases, classdict)

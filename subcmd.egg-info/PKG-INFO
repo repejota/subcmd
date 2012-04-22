@@ -1,4 +1,11 @@
-#
+Metadata-Version: 1.0
+Name: subcmd
+Version: 0.2
+Summary: A Python module that implements subcommands CLI pattern.
+Home-page: https://github.com/repejota/subcmd
+Author: Raul Perez
+Author-email: repejota@gmail.com
+License: #
 ## BEGIN LICENSE BLOCK
 #
 # Copyright (c) <2012>, Raul Perez <repejota@gmail.com>
@@ -29,24 +36,14 @@
 ## END LICENSE BLOCK
 #
 
-import context
-
-from subcmd.app import App
-from subcmd.decorators import option
-
-
-class Application(App):
-    name = "myapp"
-    description = "My cli application"
-    version = "0.2"
-    epilog = "CLI rocks!"
-
-    @option('-q', '--quiet', action='store_true', help='Quiet mode, no print to stdout')
-    def do_action(self, options):
-        """Action subcommand"""
-        if not options.quiet:
-            print "execute action!"
-
-if __name__ == "__main__":
-    app = Application()
-    app.cmdline()
+Description: subcmd
+        ======
+        
+        subcmd is an implementation of subcommands pattern in Python, provides help to
+        build tools that follows this CLI interface:
+        
+        <clitool> [global options] <command> [arguments]
+        
+        `Learn more <http://repejota.github.com/subcmd/>`_.
+        
+Platform: UNKNOWN

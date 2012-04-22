@@ -28,25 +28,3 @@
 #
 ## END LICENSE BLOCK
 #
-
-import context
-
-from subcmd.app import App
-from subcmd.decorators import option
-
-
-class Application(App):
-    name = "myapp"
-    description = "My cli application"
-    version = "0.2"
-    epilog = "CLI rocks!"
-
-    @option('-q', '--quiet', action='store_true', help='Quiet mode, no print to stdout')
-    def do_action(self, options):
-        """Action subcommand"""
-        if not options.quiet:
-            print "execute action!"
-
-if __name__ == "__main__":
-    app = Application()
-    app.cmdline()

@@ -41,5 +41,9 @@ or write him a message.
 	<div style="margin-top: 2.5em">
 	<iframe height="20px" frameborder="0" width="85px" scrolling="0" allowtransparency="true" src="http://markdotto.github.com/github-buttons/github-btn.html?user=repejota&amp;repo=subcmd&amp;type=watch&amp;count=true" class="github-btn"></iframe>
 
-  <iframe height="20px" frameborder="0" width="85px" scrolling="0" allowtransparency="true" src="http://markdotto.github.com/github-buttons/github-btn.html?user=repejota&amp;repo=subcmd&amp;type=fork&amp;count=true" class="github-btn"></iframe>
-  </p>
+    <iframe height="20px" frameborder="0" width="76px" scrolling="0" allowtransparency="true" src="http://markdotto.github.com/github-buttons/github-btn.html?user=repejota&amp;repo=subcmd&amp;type=fork&amp;count=true" class="github-btn"></iframe>
+
+    <iframe height="20px" frameborder="0" width="130px" scrolling="0" allowtransparency="true" src="http://markdotto.github.com/github-buttons/github-btn.html?user=repejota&amp;type=follow"></iframe>
+
+    <iframe frameborder="0" scrolling="no" allowtransparency="true" src="http://platform.twitter.com/widgets/follow_button.1334389481.html#_=1335048597247&amp;id=twit-repejota&amp;lang=en&amp;screen_name=repejota&amp;show_count=true&amp;show_screen_name=true&amp;size=m" class="twitter-follow-button" style="width: 218px; height: 20px;" title="Twitter Follow Button"></iframe>
+    </div>

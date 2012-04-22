@@ -10,10 +10,10 @@ its methods as a builder.
 Inherited Class
 ===============
 
-In inherited class mode just create a class that inherits from :class:`subcmd.app.App`. To 
+In inherited class mode just create a class that inherits from :class:`subcmd.app.App`. To
 customize this class just override its constructor and set the proprerties as you like.
 
-We will see how to customize this inherited class on next chapter. 
+We will see how to customize this inherited class on next chapter.
 
 Here is the simples example tool that you can build using inherited class.
 
@@ -64,7 +64,7 @@ Executing both scripts will show the same output, a default usage help message l
 Customizing Inherited Class
 ===========================
 
-When defining inherited class you can customize it and provide some information for your 
+When defining inherited class you can customize it and provide some information for your
 tool.
 
 For now available options are:
@@ -88,7 +88,7 @@ epilog
         description = "My cli application"
         version = "0.2"
         epilog = "CLI rocks!"
-        
+
 
     if __name__ == "__main__":
         app = Application()
@@ -104,9 +104,9 @@ If you use the builder interface just pass the same options as an arguments to t
   from subcmd.app import App
 
   if __name__ == "__main__":
-    app = App(name="myapp", 
-              description="My cli application", 
-              version="0.2", 
+    app = App(name="myapp",
+              description="My cli application",
+              version="0.2",
               epilog="CLI rocks!")
     app.cmdline()
 
@@ -129,10 +129,10 @@ Executing both scripts will show the same output, a default usage help message l
 
     CLI rocks!
 
-Next we are going to see how to work with arguments, specifically the default arguments that 
+Next we are going to see how to work with arguments, specifically the default arguments that
 every tool will have.
 
-This arguments are setted up automatically by :class:`subcmd.app.App` class and you don't 
+This arguments are setted up automatically by :class:`subcmd.app.App` class and you don't
 need to do anything to use them.
 
 :ref:`Next: Default optional arguments <manual_defaults>`
