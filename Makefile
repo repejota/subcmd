@@ -58,7 +58,7 @@ doc:
 
 upload:
 	  @echo $(GREEN)"Upload $(PROJECT_NAME) packages..."$(NOTHING)
-	  @python setup.py bdist sdist upload
+	  @python setup.py sdist upload
 
 upload_docs:
 	  @echo $(GREEN)"Uploading $(PROJECT_NAME) docs..."$(NOTHING)
