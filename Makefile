@@ -62,7 +62,7 @@ upload:
 
 upload_docs:
 	  @echo $(GREEN)"Uploading $(PROJECT_NAME) docs..."$(NOTHING)
-	  @python setup.py upload_docs	  
+	  @python setup.py upload_docs
 
 test:
 	  @echo $(GREEN)"Running $(PROJECT_NAME) tests..."$(NOTHING)
@@ -84,10 +84,6 @@ clean:
 	  @$(FIND) . -name '*.swp' -delete
 	  @$(FIND) . -name '*.py[co]' -delete
 	  @$(FIND) . -name '*~' -delete
-	  @$(RM) -f MANIFEST
-	  @$(RM) -rf build
-	  @$(RM) -rf docs/_build
-	  @$(RM) -rf $(PROJECT_NAME).egg-info
 
 distclean: clean
 	  @echo $(GREEN)"Cleaning $(PROJECT_NAME) packages..."$(NOTHING)
