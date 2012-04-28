@@ -1,0 +1,36 @@
+Metadata-Version: 1.1
+Name: subcmd
+Version: 0.2
+Summary: subcmd is an implementation of subcommands pattern in Python.
+Home-page: http://repejota.github.com/subcmd
+Author: Raul Perez
+Author-email: repejota@gmail.com
+License: BSD three-clause 
+Download-URL: http://repejota.github.com/subcmd/
+Description: =====
+         subcmd
+        ======
+        
+        subcmd is an implementation of subcommands pattern in Python, provides help to
+		build tools that follows this CLI interface:
+
+		<clitool> [global options] <command> [arguments]
+        
+        Documentation
+        =============
+        
+        Documentation for subcmd is in http://repejota.github.com/subcmd/
+        
+        To do
+        =====
+        
+Platform: Any    
+Development Status :: 4 - Beta'
+Environment :: Console'
+Intended Audience :: End Users/Desktop'
+Intended Audience :: Developers'
+Intended Audience :: System Administrators'
+Programming Language :: Python'
+Programming Language :: Python :: 2'
+Programming Language :: Python :: 2.7'
+Provides: subcmd

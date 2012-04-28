@@ -6,13 +6,13 @@ The common way to install **subcmd** is using pip:
 
 ::
 
-    pip install subcmd
+    $ pip install subcmd
 
 Upgrade is also trivial:
 
 ::
 
-    pip install --upgrade subcmd
+    $ pip install --upgrade subcmd
 
 Also if you prefer, download sources and install manually:
 

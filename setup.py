@@ -31,23 +31,41 @@
 
 from setuptools import setup, find_packages
 
+PROJECT = "subcmd"
+
 with open('README.rst') as f:
-    readme = f.read()
+    README = f.read()
 
 with open('LICENSE') as f:
-    license = f.read()
+    LICENSE = f.read()
 
 with open('VERSION') as f:
-    vesion = f.read()
+    VERSION = f.read()
 
 setup(
-    name='subcmd',
-    version=vesion,
+    name=PROJECT,
+    version=VERSION,
     description='A Python module that implements subcommands CLI pattern.',
-    long_description=readme,
+    long_description=README,
     author='Raul Perez',
     author_email='repejota@gmail.com',
     url='https://github.com/repejota/subcmd',
-    license=license,
-    packages=find_packages(exclude=('tests', 'docs'))
+    license=LICENSE,
+    packages=find_packages(exclude=('tests', 'docs')),
+    classifiers=[
+        'Development Status :: 4 - Beta',
+        'Environment :: Console',
+        'Intended Audience :: End Users/Desktop',
+        'Intended Audience :: Developers',
+        'Intended Audience :: System Administrators',
+        'Programming Language :: Python',
+        'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 2.7',
+    ],
+    platforms=['Any'],
+    scripts=[],
+    provides=['subcmd',],
+    install_requires=[],
+    namespace_packages=[],
+    zip_safe=False,
 )
