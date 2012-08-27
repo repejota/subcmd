@@ -30,6 +30,7 @@
 #
 
 from setuptools import setup, find_packages
+from sys import version_info
 
 PROJECT = "subcmd"
 
@@ -41,6 +42,11 @@ with open('LICENSE') as f:
 
 with open('VERSION') as f:
     VERSION = f.read()
+
+install_requires = []
+
+if version_info < (2, 7) or (3, 0) <= version_info < (3, 2):
+    install_requires += ['argparse']
 
 setup(
     name=PROJECT,
@@ -65,7 +71,7 @@ setup(
     platforms=['Any'],
     scripts=[],
     provides=['subcmd',],
-    install_requires=[],
+    install_requires=install_requires,
     namespace_packages=[],
     zip_safe=False,
 )
