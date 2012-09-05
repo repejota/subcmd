@@ -56,7 +56,7 @@ def option(*args, **kwds):
     def _decorator(func):
         _option = (args, kwds)
         if hasattr(func, 'options'):
-            func.options.append(_option)
+            func.options.insert(0, _option)
         else:
             func.options = [_option]
         return func
