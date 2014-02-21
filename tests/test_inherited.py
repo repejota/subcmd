@@ -1,7 +1,7 @@
 #
 ## BEGIN LICENSE BLOCK
 #
-# Copyright (c) <2012>, Raul Perez <repejota@gmail.com>
+# Copyright (c) <2012-2014>, Raul Perez <repejota@gmail.com>
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -36,35 +36,35 @@ from subcmd.app import App
 
 
 class InheritedTestSuite(unittest.TestCase):
-	"""Inherited test cases."""
+    """Inherited test cases."""
 
-	def test_absolute_truth_and_meaning(self):
-		assert True
+    def test_absolute_truth_and_meaning(self):
+        assert True
 
-	def test_create_class(self):
-		class Application(App):
-			name = "myapp"
-			description = "My cli application"
-			version = 0.2
-			epilog = "CLI rocks!"
+    def test_create_class(self):
+        class Application(App):
+            name = "myapp"
+            description = "My cli application"
+            version = 0.2
+            epilog = "CLI rocks!"
 
-		app = Application()
-		# We got a default name
-		self.assertIsNotNone(app.name)
-		# Default name is initialized
-		self.assertEquals("myapp", app.name)
-		# We got a default description
-		self.assertIsNotNone(app.description)
-		# Default description is initialized
-		self.assertEquals("My cli application", app.description)
-		# We got a default epilog
-		self.assertIsNotNone(app.epilog)
-		# Default epilog is initialized
-		self.assertEquals("CLI rocks!", app.epilog)
-		# We got a default version
-		self.assertIsNotNone(app.version)
-		# Default version is 0.2
-		self.assertEquals(0.2, app.version)
+        app = Application()
+        # We got a default name
+        self.assertIsNotNone(app.name)
+        # Default name is initialized
+        self.assertEquals("myapp", app.name)
+        # We got a default description
+        self.assertIsNotNone(app.description)
+        # Default description is initialized
+        self.assertEquals("My cli application", app.description)
+        # We got a default epilog
+        self.assertIsNotNone(app.epilog)
+        # Default epilog is initialized
+        self.assertEquals("CLI rocks!", app.epilog)
+        # We got a default version
+        self.assertIsNotNone(app.version)
+        # Default version is 0.2
+        self.assertEquals(0.2, app.version)
 
 
 if __name__ == '__main__':
