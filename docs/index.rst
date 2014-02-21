@@ -20,10 +20,10 @@ A common :abbr:`CLI (Command line interface)` tool built with **subcmd** follows
 .. raw:: html
 
     <div class="btn-group pull-right download-buttons-home">
-    <a href="https://github.com/repejota/subcmd/zipball/v0.2" class="btn zip">Download<br/><strong>ZIP File</strong></a>
-    <a href="https://github.com/repejota/subcmd/tarball/v0.2" class="btn tar">Download<br/><strong>Tar Ball</strong></a>
+    <a href="https://github.com/repejota/subcmd/zipball/v0.3" class="btn zip">Download<br/><strong>ZIP File</strong></a>
+    <a href="https://github.com/repejota/subcmd/tarball/v0.3" class="btn tar">Download<br/><strong>Tar Ball</strong></a>
     <a href="https://github.com/repejota/subcmd/" class="btn github">Fork On<br/><strong>GitHub</strong></a>
-    <div class="current-version">Current version is <span class="version">v0.2</span></div>
+    <div class="current-version">Current version is <span class="version">v0.3</span></div>
     </div>
 
 Contents
