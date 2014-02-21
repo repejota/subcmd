@@ -34,7 +34,7 @@ from sys import version_info
 
 PROJECT = "subcmd"
 
-with open('README.rst') as f:
+with open('README.md') as f:
     README = f.read()
 
 with open('LICENSE') as f:
