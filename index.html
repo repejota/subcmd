@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Subcmd by repejota</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Subcmd</h1>
+      <h2 class="project-tagline">A Python module that implements subcommands CLI pattern.</h2>
+      <a href="https://github.com/repejota/subcmd" class="btn">View on GitHub</a>
+      <a href="https://github.com/repejota/subcmd/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/repejota/subcmd/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="subcmd" class="anchor" href="#subcmd" aria-hidden="true"><span class="octicon octicon-link"></span></a>subcmd</h1>
+
+<p><strong>subcmd</strong> a python module for easily bulding multi-command scripts. Provides automatic usage help generation based on classes and methods python documentation, grouped arguments helpers and a rich API (Application Programming Interface) to build rock solid CLI (Command line interface) tools and utilities.</p>
+
+<p>It is licensed with the [BSD three-clause] license.</p>
+
+<p>A common CLI (Command line interface) tool built with <strong>subcmd</strong> follows a pattern like:</p>
+
+<pre><code>[command] [subcommand] [options] [arguments]
+</code></pre>
+
+<h2>
+<a id="more-information" class="anchor" href="#more-information" aria-hidden="true"><span class="octicon octicon-link"></span></a>More information</h2>
+
+<p><strong>subcmd</strong> is written by Raül Pérez. For questions and suggestions concerning this project please go to its [Github repository site] and file a bug or write him a message.</p>
+
+
+
+<p></p>
+
+<h1>
+<a id="install" class="anchor" href="#install" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install</h1>
+
+<p>The common way to install <strong>subcmd</strong> is using pip:</p>
+
+<pre><code>$ pip install subcmd
+</code></pre>
+
+<p>Upgrade is also trivial:</p>
+
+<pre><code>$ pip install --upgrade subcmd
+</code></pre>
+
+<p>To upgrade just download another version and proceed like a normal installation.</p>
+
+<p>For old versions and active development branches please, refer to the project Github [pages].</p>
+
+<p>Once you have installed proceed to read the quick tutorial &lt;tutorial&gt; or the in depth manual &lt;manual&gt; and start to work with <strong>subcmd</strong>.</p>
+
+<h1>
+<a id="tutorial" class="anchor" href="#tutorial" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tutorial</h1>
+
+<p>The most simple example use of <strong>subcmd</strong> is a class that inherits from subcmd.app.App base object. Then ( and by default ), all methods of this created class which starts with prefix “<em>do_</em>” will be available as subcommands.</p>
+
+<p>With subcmd.decorators.option and subcmd.decorators.arg decorators you can add positional arguments and valued options to each command.</p>
+
+<p>For example:</p>
+
+<pre><code>from subcmd.app import App
+from subcmd.decorators import option
+from subcmd.decorators import arg
+
+class Application(App):
+    """a description of the example app"""
+    name = 'example'
+    version = '0.1'
+    default_args = ['--help']
+
+    @option('--log', '-l', action='store_true', help='log foo is on')
+    def do_foo(self, options):
+        """help text for foo subcommand"""
+        print options
+
+    @option('-f', '--force', action='store_true', help='force bar execution')
+    def do_bar(self, options):
+        """help text for bar subcommand"""
+        print options
+
+if __name__ == "__main__":
+    app = Application()
+    app.cmdline()
+</code></pre>
+
+<p>Executing this script with no command line arguments will output:</p>
+
+<pre><code>$ python example.py
+
+usage: example.py [-h] [-v] {foo,bar} ...
+
+a description
+
+optional arguments:
+  -h, --help     show this help message and exit
+  -v, --version
+
+subcommands:
+  valid subcommands
+
+  {foo,bar}      additional help
+    bar          help text for bar subcommand
+    foo          help text for foo subcommand
+
+an epilog
+</code></pre>
+
+<p>You can see how if no argument is specified an automatic usage help message is shown.</p>
+
+<p>Also all docstrings definint both class object and every method starting with “do_” are converted to help descriptions for each command.</p>
+
+<p>Finally <strong>subcmd</strong> ads by default some arguments that are common on all CLI based tools like <code>--version</code> ( wich shows the version string of your tool ) and <code>--help</code> ( wich generates the same usage message you see if no command line arguments are specified ).</p>
+
+<p><strong>subcmd</strong> provides a lot of more features and customization options, refer to the detailed manual &lt;manual&gt; for more information.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/repejota/subcmd">Subcmd</a> is maintained by <a href="https://github.com/repejota">repejota</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
